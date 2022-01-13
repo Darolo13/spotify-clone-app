@@ -1,22 +1,18 @@
-import React, { useEffect } from 'react';
-import { useStateValue } from '../StateProvider';
+import React, { useEffect } from "react";
+import { useStateValue } from "../StateProvider";
 
 // style
-import './header.css';
+import "./header.css";
 
+function Header({ spotify }) {
+  const [{ user }, dispatch] = useStateValue();
 
-
-function Header() {
-    return (
-        <div className="header">
-            <div className="header__left">
-
-            </div>
-            <div className="header__right">
-                
-            </div>
-        </div>
-    )
+  return (
+    <div className="header">
+      <div className="header__left"></div>
+      <div className="header__right"></div>
+    </div>
+  );
 }
 
-export default Header
+export default Header;

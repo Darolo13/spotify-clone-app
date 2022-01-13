@@ -1,11 +1,15 @@
-import './body.css';
+// style
+import "./body.css";
 
-function Body() {
-    return (
-        <div className="body">
-            
-        </div>
-    )
+// components
+import Header from "../Header";
+
+function Body({ spotify }) {
+  return (
+    <div className="body">
+      <Header spotify={spotify} />
+    </div>
+  );
 }
 
-export default Body
+export default Body;
