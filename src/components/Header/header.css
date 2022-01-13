@@ -22,3 +22,12 @@
 .header__left > h4 {
     margin-left: 10px;
 }
+
+.header__right {
+    display: flex;
+    align-items: center;
+}
+
+.header__right > h4 {
+    margin-left: 10px;
+}
