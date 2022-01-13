@@ -11,6 +11,7 @@ import { useStateValue } from './components/StateProvider';
 
 // components
 import Login from "./components/Login";
+import Player from "./components/Player";
 
 const s = new SpotifyWebApi();
 
@@ -67,7 +68,10 @@ function App() {
     }
   }, [token, dispatch]);
 
-  return <div className="app">{!token && <Login />}</div>;
+  return <div className="app">
+    {!token && <Login />}
+    {token && <Player spotify={s} />}
+  </div>;
 }
 
 export default App;
