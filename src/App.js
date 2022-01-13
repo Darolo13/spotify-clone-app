@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 
 // spotify token
 import { getTokenFromResponse } from "./spotify";
+
 // spotify web API
 import SpotifyWebApi from "spotify-web-api-js";
 
 // State Provider
-import { useStateValue } from "./components/StateProvider";
+import { useStateValue } from './components/StateProvider';
 
 // components
 import Login from "./components/Login";
@@ -66,11 +67,7 @@ function App() {
     }
   }, [token, dispatch]);
 
-  return (
-    <div className="app">
-      {!token && <Login />}
-    </div>
-  );
+  return <div className="app">{!token && <Login />}</div>;
 }
 
 export default App;
