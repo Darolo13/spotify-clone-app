@@ -9,7 +9,7 @@ import { Avatar } from "@material-ui/core";
 import "./header.css";
 
 function Header({ spotify }) {
-    const [{ user }, dispatch] = useStateValue();
+    const [{ user }] = useStateValue();
 
   return (
     <div className="header">
