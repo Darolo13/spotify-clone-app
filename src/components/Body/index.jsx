@@ -2,7 +2,7 @@ import './body.css';
 
 function Body() {
     return (
-        <div>
+        <div className="body">
             
         </div>
     )
