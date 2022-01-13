@@ -9,7 +9,7 @@ import "./body.css";
 
 function Body({ spotify }) {
 
-  const [{ discover_weekly }, dispatch] = useStateValue();
+  const [{ discover_weekly }] = useStateValue();
 
   return (
     <div className="body">
