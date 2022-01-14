@@ -11,6 +11,10 @@ import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 import RepeatIcon from "@material-ui/icons/Repeat";
 
+import { Grid, Slider } from "@material-ui/core";
+import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
+import VolumeDownIcon from "@material-ui/icons/VolumeDown";
+
 // style
 import "./footer.css";
 
@@ -33,47 +37,47 @@ function Footer({ spotify }) {
   }, [spotify]);
 
   const handlePlayPause = () => {
-      if (playing) {
-        spotify.pause();
-        dispatch({
-            type: "SET_PLAYING",
-            playing: false,
-        });
-      } else {
-          spotify.play();
-          dispatch({
-              type: "SET_PLAYING",
-              playing: true,
-          });
-      }
+    if (playing) {
+      spotify.pause();
+      dispatch({
+        type: "SET_PLAYING",
+        playing: false,
+      });
+    } else {
+      spotify.play();
+      dispatch({
+        type: "SET_PLAYING",
+        playing: true,
+      });
+    }
   };
 
   const skipToNext = () => {
-      spotify.skipToNext();
-      spotify.getMyCurrentPlayingTrack().then((r) => {
-          dispatch({
-              type: "SET_ITEM",
-              item: r.item,
-          });
-          dispatch({
-              type: "SET_PLAYING",
-              playing: true,
-          });
+    spotify.skipToNext();
+    spotify.getMyCurrentPlayingTrack().then((r) => {
+      dispatch({
+        type: "SET_ITEM",
+        item: r.item,
       });
+      dispatch({
+        type: "SET_PLAYING",
+        playing: true,
+      });
+    });
   };
 
   const skipPrevious = () => {
-      spotify.skipToPrevious();
-      spotify.getMyCurrentPlayingTrack().then((r) => {
-          dispatch({
-              type: "SET_ITEM",
-              item: r.item,
-          });
-          dispatch({
-              type: "SET_PLAYING",
-              playing: true,
-          });
+    spotify.skipToPrevious();
+    spotify.getMyCurrentPlayingTrack().then((r) => {
+      dispatch({
+        type: "SET_ITEM",
+        item: r.item,
       });
+      dispatch({
+        type: "SET_PLAYING",
+        playing: true,
+      });
+    });
   };
 
   return (
@@ -116,6 +120,19 @@ function Footer({ spotify }) {
         )}
         <SkipNextIcon onClick={skipPrevious} className="footer__icon" />
         <RepeatIcon className="footer__green" />
+      </div>
+      <div className="footer__right">
+        <Grid container spacing={2}>
+          <Grid item>
+            <PlaylistPlayIcon />
+          </Grid>
+          <Grid item>
+            <VolumeDownIcon />
+          </Grid>
+          <Grid item xs>
+            <Slider aria-labelledby="continuous-slider" />
+          </Grid>
+        </Grid>
       </div>
     </div>
   );
