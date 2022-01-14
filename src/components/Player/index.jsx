@@ -1,6 +1,7 @@
 // components
 import Body from '../Body';
 import Sidebar from '../Sidebar';
+import Footer from '../Footer';
 
 // style
 import "./player.css";
@@ -12,6 +13,7 @@ function Player({ spotify }) {
         <Sidebar />
         <Body spotify={spotify} />
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,3 @@
-// spotify token
-import { getTokenFromResponse } from "../../spotify";
-
 // State Provider
 import { useStateValue } from "../StateProvider";
 
