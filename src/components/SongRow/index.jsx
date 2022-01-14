@@ -1,6 +1,5 @@
 // style
-
-import React from 'react'
+import "./songrow.css";
 
 function SongRow() {
     return (
