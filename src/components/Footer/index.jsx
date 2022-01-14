@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // component
-import useStateValue from "../StateProvider";
+import { useStateValue } from "../StateProvider";
 
 // material-ui
 import ShuffleIcon from "@material-ui/icons/Shuffle";
@@ -24,7 +24,7 @@ function Footer({ spotify }) {
   // useEffect
 
   useEffect(() => {
-    spotify.getMyCurrentPlaybackState().then((r) => {
+    spotify?.getMyCurrentPlaybackState().then((r) => {
       dispatch({
         type: "SET_PLAYING",
         playing: r.is_playing,
